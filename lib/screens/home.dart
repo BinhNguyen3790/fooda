@@ -8,12 +8,34 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Home"),
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.white,
+        elevation: 0,
+        shape: Border(
+          bottom: BorderSide(
+            color: Colors.redAccent,
+            width: 2,
+          ),
+        ),
+        iconTheme: IconThemeData(
+          color: Colors.black,
+        ), 
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.notifications,
+              color: Colors.black,
+            ), 
+            onPressed: () {
+              
+            },
+          ),
+        ],
       ),
       body: Container(
         child: ElevatedButton(

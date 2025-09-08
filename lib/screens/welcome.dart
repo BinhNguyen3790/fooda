@@ -114,7 +114,7 @@ class _WelcomeState extends State<Welcome> {
                           ),
                         ),
                         SizedBox(width: 6),
-                        Icon(Icons.navigate_next),
+                        Icon(Icons.arrow_forward),
                       ],
                     ),
                   )
