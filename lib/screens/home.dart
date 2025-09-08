@@ -13,6 +13,15 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Home"),
+        backgroundColor: Colors.redAccent,
+      ),
+      body: Container(
+        child: ElevatedButton(
+          onPressed: (){
+            Navigator.of(context).popAndPushNamed('login');
+          }, 
+          child: Text("logout")
+        ),
       ),
     );
   }

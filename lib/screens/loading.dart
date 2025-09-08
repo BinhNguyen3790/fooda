@@ -1,7 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:fooda/screens/welcome.dart';
 
-class Loading extends StatelessWidget {
+class Loading extends StatefulWidget {
 const Loading({ Key? key }) : super(key: key);
+
+  @override
+  State<Loading> createState() => _LoadingState();
+}
+
+class _LoadingState extends State<Loading> {
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const Welcome()),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context){
@@ -17,10 +35,8 @@ const Loading({ Key? key }) : super(key: key);
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Expanded(
-              child: Center(
-                child: Image.asset("assets/imgs/icons/app_icon_android.png"),
-              ),
+            Center(
+              child: Image.asset("assets/imgs/icons/app_icon_android.png"),
             ),
           ]
         ),
