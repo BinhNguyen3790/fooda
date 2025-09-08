@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fooda/screens/welcome.dart';
+import 'package:fooda/services/todo.dart';
 
 class Loading extends StatefulWidget {
 const Loading({ Key? key }) : super(key: key);
@@ -10,17 +10,18 @@ const Loading({ Key? key }) : super(key: key);
 
 class _LoadingState extends State<Loading> {
 
+  void setupTodo() async {
+    Todo instance = Todo(type: "users");
+    await instance.getTodo();
+    Navigator.pushReplacementNamed(context, "welcome");
+  }
+
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const Welcome()),
-      );
-    });
+    setupTodo();
   }
-
+  
   @override
   Widget build(BuildContext context){
     return Scaffold(
