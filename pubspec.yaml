@@ -72,6 +72,7 @@ flutter:
     - assets/imgs/welcome/
     - assets/imgs/about/
     - assets/imgs/login/
+    - assets/imgs/home/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
